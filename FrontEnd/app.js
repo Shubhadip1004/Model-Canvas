@@ -19,7 +19,8 @@ function selectDataset(name) {
 async function loadAndPlot(dataset, algo) {
   setStatus(`Training ${algo} on ${dataset} ...`);
   try {
-    const resp = await fetch(`/train?dataset=${dataset}&algo=${algo}`);
+    const API = "https://model-canvas-backend.onrender.com";
+    const resp = await fetch(`${API}/train?dataset=${dataset}&algo=${algo}`);
     if (!resp.ok) {
       const err = await resp.json();
       setStatus(`Error: ${err.error || resp.statusText}`);
