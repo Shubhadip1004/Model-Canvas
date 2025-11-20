@@ -6,6 +6,7 @@
   --muted:#9aa7c7;
   --glass: rgba(255,255,255,0.03);
   --white:#f8fafc;
+  --grey:#54575b;
 }
 
 *{box-sizing:border-box;font-family:Inter, Roboto, "Segoe UI", Arial, sans-serif}
