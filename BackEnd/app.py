@@ -2,6 +2,7 @@
 from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 import numpy as np
+import os
 
 from utils.data_loader import load_dataset_2d
 from utils.boundary_plot import make_decision_boundary_grid
@@ -98,4 +99,5 @@ def train():
     return jsonify(resp)
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5000)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port, debug=False)
