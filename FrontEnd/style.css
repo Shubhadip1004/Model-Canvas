@@ -1,0 +1,89 @@
+/* frontend/style.css */
+:root{
+  --bg:#0f1724;
+  --card:#0b1220;
+  --accent:#4361ee;
+  --muted:#9aa7c7;
+  --glass: rgba(255,255,255,0.03);
+  --white:#f8fafc;
+}
+
+*{box-sizing:border-box;font-family:Inter, Roboto, "Segoe UI", Arial, sans-serif}
+body{
+  margin:0;
+  background:linear-gradient(180deg,#071026 0%, #0b1726 100%);
+  color:var(--white);
+  min-height:100vh;
+}
+
+/* Navbar */
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:14px 20px;
+  background:linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+  border-bottom:1px solid rgba(255,255,255,0.03);
+}
+.brand{
+  font-weight:700;
+  letter-spacing:0.6px;
+  font-size:20px;
+  color:var(--accent);
+}
+.controls select{
+  padding:8px 10px;
+  border-radius:8px;
+  border:none;
+  background:var(--glass);
+  color:var(--grey);
+}
+
+/* Layout */
+.container{
+  display:grid;
+  grid-template-columns:300px 1fr;
+  gap:18px;
+  padding:20px;
+}
+.dataset-panel{
+  background: rgba(255,255,255,0.02);
+  padding:16px;
+  border-radius:12px;
+  min-height:300px;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.6);
+}
+.dataset-panel h3{margin:0 0 12px 0;color:var(--muted)}
+.dataset-buttons{display:flex;flex-direction:column;gap:10px}
+.dataset-buttons button{
+  padding:10px;
+  border-radius:8px;
+  border:1px solid rgba(255,255,255,0.04);
+  background:transparent;
+  color:var(--white);
+  cursor:pointer;
+  text-align:left;
+}
+.dataset-buttons button:hover{
+  background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  transform:translateX(4px);
+}
+
+.info{margin-top:14px;color:var(--muted);font-size:14px}
+#metrics{margin-top:10px;color:var(--accent);font-weight:600}
+
+/* Plot area */
+.plot-area{
+  background: rgba(255,255,255,0.01);
+  border-radius:12px;
+  padding:12px;
+  min-height:640px;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.6);
+}
+
+/* Responsive */
+@media (max-width:900px){
+  .container{grid-template-columns:1fr; padding:12px}
+  .plot-area{order:2}
+  .dataset-panel{order:1}
+}

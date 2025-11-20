@@ -1,0 +1,50 @@
+<!-- frontend/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Model Canvas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="brand">ModelCanvas</div>
+    <div class="controls">
+      <select id="algoSelect" title="Choose algorithm">
+        <option value="logistic">Logistic Regression</option>
+        <option value="knn">KNN</option>
+        <option value="svm">SVM</option>
+        <option value="decision_tree">Decision Tree</option>
+        <option value="random_forest">Random Forest</option>
+        <option value="neural_network">Neural Network</option>
+      </select>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section class="dataset-panel">
+      <h3>Choose a dataset</h3>
+      <div class="dataset-buttons">
+        <button onclick="selectDataset('iris')">Iris</button>
+        <button onclick="selectDataset('wine')">Wine</button>
+        <button onclick="selectDataset('breast_cancer')">Breast Cancer</button>
+        <button onclick="selectDataset('diabetes')">Diabetes</button>
+      </div>
+
+      <div class="info">
+        <p id="meta">No dataset loaded.</p>
+        <p id="metrics"></p>
+      </div>
+    </section>
+
+    <section class="plot-area">
+      <div id="plot" style="width:100%; height:640px;"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+  <script src="plot.js"></script>
+</body>
+</html>
